@@ -1,0 +1,598 @@
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [plug_example] loaded
+INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  [plug_nothing] activated
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [plug_example] loaded
+INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  [plug_example] activated
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [plug_example] loaded
+INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  [plug_example] activated
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [plug_example] loaded
+INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  [plug_example] activated
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [plug_example] loaded
+INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  [plug_example] activated
+INFO	  [uvicorn.error] Started server process [42684]
+INFO	  [uvicorn.error] Waiting for application startup.
+INFO	  [uvicorn.error] Application startup complete.
+INFO	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  [uvicorn.access] 127.0.0.1:12064 - "GET / HTTP/1.1" 200
+INFO	  [uvicorn.access] 127.0.0.1:12064 - "GET / HTTP/1.1" 200
+INFO	  [uvicorn.error] Shutting down
+INFO	  [uvicorn.error] Waiting for application shutdown.
+INFO	  [uvicorn.error] Application shutdown complete.
+INFO	  [uvicorn.error] Finished server process [42684]
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [plug_example] loaded
+INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  [plug_example] activated
+INFO	  [core] starting server
+INFO	  [uvicorn.error] Started server process [40300]
+INFO	  [uvicorn.error] Waiting for application startup.
+INFO	  [uvicorn.error] Application startup complete.
+INFO	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  [uvicorn.error] Shutting down
+INFO	  [uvicorn.error] Waiting for application shutdown.
+INFO	  [uvicorn.error] Application shutdown complete.
+INFO	  [uvicorn.error] Finished server process [40300]
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [plug_example] loaded
+INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  [plug_example] activated
+INFO	  [core] starting server
+INFO	  [uvicorn.error] Started server process [47168]
+INFO	  [uvicorn.error] Waiting for application startup.
+INFO	  [uvicorn.error] Application startup complete.
+INFO	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  [uvicorn.error] Shutting down
+INFO	  [uvicorn.error] Waiting for application shutdown.
+INFO	  [uvicorn.error] Application shutdown complete.
+INFO	  [uvicorn.error] Finished server process [47168]
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [plug_example] loaded
+INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  [plug_example] activated
+INFO	  [core] starting server
+INFO	  [uvicorn.error] Started server process [13480]
+INFO	  [uvicorn.error] Waiting for application startup.
+INFO	  [uvicorn.error] Application startup complete.
+INFO	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  [uvicorn.error] Shutting down
+INFO	  [uvicorn.error] Waiting for application shutdown.
+INFO	  [uvicorn.error] Application shutdown complete.
+INFO	  [uvicorn.error] Finished server process [13480]
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [plug_example] loaded
+INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  [plug_example] activated
+INFO	  [core] starting server
+INFO	  [uvicorn.error] Started server process [17160]
+INFO	  [uvicorn.error] Waiting for application startup.
+INFO	  [uvicorn.error] Application startup complete.
+INFO	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  [uvicorn.error] Shutting down
+INFO	  [uvicorn.error] Waiting for application shutdown.
+INFO	  [uvicorn.error] Application shutdown complete.
+INFO	  [uvicorn.error] Finished server process [17160]
+INFO	  [core] startup complete
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [plug_example] loaded
+INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  [plug_example] activated
+INFO	  [core] starting server
+INFO	  [uvicorn.error] Started server process [22672]
+INFO	  [uvicorn.error] Waiting for application startup.
+INFO	  [uvicorn.error] Application startup complete.
+INFO	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [plug_example] loaded
+INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  [plug_example] activated
+INFO	  [core] starting server
+INFO	  [uvicorn.error] Started server process [43496]
+INFO	  [uvicorn.error] Waiting for application startup.
+INFO	  [uvicorn.error] Application startup complete.
+INFO	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  [uvicorn.error] Shutting down
+INFO	  [uvicorn.error] Waiting for application shutdown.
+INFO	  [uvicorn.error] Application shutdown complete.
+INFO	  [uvicorn.error] Finished server process [43496]
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [plug_example] loaded
+INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  [plug_example] activated
+INFO	  [core] starting server
+INFO	  [uvicorn.error] Started server process [32776]
+INFO	  [uvicorn.error] Waiting for application startup.
+INFO	  [uvicorn.error] Application startup complete.
+INFO	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  [uvicorn.error] Shutting down
+INFO	  [uvicorn.error] Waiting for application shutdown.
+INFO	  [uvicorn.error] Application shutdown complete.
+INFO	  [uvicorn.error] Finished server process [32776]
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [plug_example] loaded
+INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  [plug_example] activated
+INFO	  [core] starting server
+INFO	  [uvicorn.error] Started server process [45696]
+INFO	  [uvicorn.error] Waiting for application startup.
+INFO	  [uvicorn.error] Application startup complete.
+INFO	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  [uvicorn.error] Shutting down
+INFO	  [uvicorn.error] Waiting for application shutdown.
+INFO	  [uvicorn.error] Application shutdown complete.
+INFO	  [uvicorn.error] Finished server process [45696]
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [plug_example] loaded
+INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  [plug_example] activated
+INFO	  [core] starting server
+INFO	  [uvicorn.error] Started server process [22336]
+INFO	  [uvicorn.error] Waiting for application startup.
+INFO	  [uvicorn.error] Application startup complete.
+INFO	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [plug_example] loaded
+INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  [plug_example] activated
+INFO	  [core] starting server
+INFO	  [uvicorn.error] Started server process [42696]
+INFO	  [uvicorn.error] Waiting for application startup.
+INFO	  [uvicorn.error] Application startup complete.
+ERROR	  [uvicorn.error] [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8080): 通常每个套接字地址(协议/网络地址/端口)只允许使用一次。
+INFO	  [uvicorn.error] Waiting for application shutdown.
+INFO	  [uvicorn.error] Application shutdown complete.
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [plug_example] loaded
+INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  [plug_example] activated
+INFO	  [core] starting server
+INFO	  [uvicorn.error] Started server process [5352]
+INFO	  [uvicorn.error] Waiting for application startup.
+INFO	  [uvicorn.error] Application startup complete.
+ERROR	  [uvicorn.error] [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8080): 通常每个套接字地址(协议/网络地址/端口)只允许使用一次。
+INFO	  [uvicorn.error] Waiting for application shutdown.
+INFO	  [uvicorn.error] Application shutdown complete.
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [plug_example] loaded
+INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  [plug_example] activated
+INFO	  [core] starting server
+INFO	  [uvicorn.error] Started server process [21816]
+INFO	  [uvicorn.error] Waiting for application startup.
+INFO	  [uvicorn.error] Application startup complete.
+INFO	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  [uvicorn.error] Shutting down
+INFO	  [uvicorn.error] Waiting for application shutdown.
+INFO	  [uvicorn.error] Application shutdown complete.
+INFO	  [uvicorn.error] Finished server process [21816]
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [plug_example] loaded
+INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  [plug_example] activated
+INFO	  [core] starting server
+INFO	  [uvicorn.error] Started server process [46304]
+INFO	  [uvicorn.error] Waiting for application startup.
+INFO	  [uvicorn.error] Application startup complete.
+INFO	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  [uvicorn.error] Shutting down
+INFO	  [uvicorn.error] Waiting for application shutdown.
+INFO	  [uvicorn.error] Application shutdown complete.
+INFO	  [uvicorn.error] Finished server process [46304]
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [plug_example] loaded
+INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  [plug_example] activated
+INFO	  [core] starting server
+INFO	  [uvicorn.error] Started server process [5604]
+INFO	  [uvicorn.error] Waiting for application startup.
+INFO	  [uvicorn.error] Application startup complete.
+INFO	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  [uvicorn.error] Shutting down
+INFO	  [uvicorn.error] Waiting for application shutdown.
+INFO	  [uvicorn.error] Application shutdown complete.
+INFO	  [uvicorn.error] Finished server process [5604]
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [plug_example] loaded
+INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  [plug_example] activated
+INFO	  [core] starting server
+INFO	  [uvicorn.error] Started server process [43016]
+INFO	  [uvicorn.error] Waiting for application startup.
+INFO	  [uvicorn.error] Application startup complete.
+INFO	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  [uvicorn.error] Shutting down
+INFO	  [uvicorn.error] Waiting for application shutdown.
+INFO	  [uvicorn.error] Application shutdown complete.
+INFO	  [uvicorn.error] Finished server process [43016]
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [plug_example] loaded
+INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  [plug_example] activated
+INFO	  [core] starting server
+INFO	  [uvicorn.error] Started server process [33416]
+INFO	  [uvicorn.error] Waiting for application startup.
+INFO	  [uvicorn.error] Application startup complete.
+INFO	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  [uvicorn.error] Shutting down
+INFO	  [uvicorn.error] Waiting for application shutdown.
+INFO	  [uvicorn.error] Application shutdown complete.
+INFO	  [uvicorn.error] Finished server process [33416]
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [plug_example] loaded
+INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  [plug_example] activated
+INFO	  [core] starting server
+INFO	  [uvicorn.error] Started server process [47832]
+INFO	  [uvicorn.error] Waiting for application startup.
+INFO	  [uvicorn.error] Application startup complete.
+INFO	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  [uvicorn.error] Shutting down
+INFO	  [uvicorn.error] Waiting for application shutdown.
+INFO	  [uvicorn.error] Application shutdown complete.
+INFO	  [uvicorn.error] Finished server process [47832]
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [plug_example] loaded
+INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  [plug_example] activated
+INFO	  [core] starting server
+INFO	  [uvicorn.error] Started server process [26276]
+INFO	  [uvicorn.error] Waiting for application startup.
+INFO	  [uvicorn.error] Application startup complete.
+INFO	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  [uvicorn.error] Shutting down
+INFO	  [uvicorn.error] Waiting for application shutdown.
+INFO	  [uvicorn.error] Application shutdown complete.
+INFO	  [uvicorn.error] Finished server process [26276]
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [plug_example] loaded
+INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  [plug_example] activated
+INFO	  [core] starting server
+INFO	  [uvicorn.error] Started server process [46732]
+INFO	  [uvicorn.error] Waiting for application startup.
+INFO	  [uvicorn.error] Application startup complete.
+INFO	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  [uvicorn.error] Shutting down
+INFO	  [uvicorn.error] Waiting for application shutdown.
+INFO	  [uvicorn.error] Application shutdown complete.
+INFO	  [uvicorn.error] Finished server process [46732]
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [plug_example] loaded
+INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  [plug_example] activated
+INFO	  [core] starting server
+INFO	  [uvicorn.error] Started server process [46492]
+INFO	  [uvicorn.error] Waiting for application startup.
+INFO	  [uvicorn.error] Application startup complete.
+INFO	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  [uvicorn.error] Shutting down
+INFO	  [uvicorn.error] Waiting for application shutdown.
+INFO	  [uvicorn.error] Application shutdown complete.
+INFO	  [uvicorn.error] Finished server process [46492]
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [plug_example] loaded
+INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  [plug_example] activated
+INFO	  [core] starting server
+INFO	  [uvicorn.error] Started server process [13180]
+INFO	  [uvicorn.error] Waiting for application startup.
+INFO	  [uvicorn.error] Application startup complete.
+INFO	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  [uvicorn.error] Shutting down
+INFO	  [uvicorn.error] Waiting for application shutdown.
+INFO	  [uvicorn.error] Application shutdown complete.
+INFO	  [uvicorn.error] Finished server process [13180]
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [plug_example] loaded
+INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  [plug_example] activated
+INFO	  [core] starting server
+INFO	  [uvicorn.error] Started server process [47060]
+INFO	  [uvicorn.error] Waiting for application startup.
+INFO	  [uvicorn.error] Application startup complete.
+INFO	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  [uvicorn.error] Shutting down
+INFO	  [uvicorn.error] Waiting for application shutdown.
+INFO	  [uvicorn.error] Application shutdown complete.
+INFO	  [uvicorn.error] Finished server process [47060]
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [plug_example] loaded
+INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  [plug_example] activated
+INFO	  [core] starting server
+INFO	  [uvicorn.error] Started server process [23432]
+INFO	  [uvicorn.error] Waiting for application startup.
+INFO	  [uvicorn.error] Application startup complete.
+INFO	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  [uvicorn.error] Shutting down
+INFO	  [uvicorn.error] Waiting for application shutdown.
+INFO	  [uvicorn.error] Application shutdown complete.
+INFO	  [uvicorn.error] Finished server process [23432]
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [plug_example] loaded
+INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  [plug_example] activated
+INFO	  [core] starting server
+INFO	  [uvicorn.error] Started server process [48076]
+INFO	  [uvicorn.error] Waiting for application startup.
+INFO	  [uvicorn.error] Application startup complete.
+INFO	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  [uvicorn.error] Shutting down
+INFO	  [uvicorn.error] Waiting for application shutdown.
+INFO	  [uvicorn.error] Application shutdown complete.
+INFO	  [uvicorn.error] Finished server process [48076]
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [plug_example] loaded
+INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  [plug_example] activated
+INFO	  [core] starting server
+INFO	  [uvicorn.error] Started server process [25008]
+INFO	  [uvicorn.error] Waiting for application startup.
+INFO	  [uvicorn.error] Application startup complete.
+INFO	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  [uvicorn.error] Shutting down
+INFO	  [uvicorn.error] Waiting for application shutdown.
+INFO	  [uvicorn.error] Application shutdown complete.
+INFO	  [uvicorn.error] Finished server process [25008]
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [plug_example] loaded
+INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  [plug_example] activated
+INFO	  [core] starting server
+INFO	  [uvicorn.error] Started server process [40756]
+INFO	  [uvicorn.error] Waiting for application startup.
+INFO	  [uvicorn.error] Application startup complete.
+INFO	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  [uvicorn.error] Shutting down
+INFO	  [uvicorn.error] Waiting for application shutdown.
+INFO	  [uvicorn.error] Application shutdown complete.
+INFO	  [uvicorn.error] Finished server process [40756]
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [plug_example] loaded
+INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  [plug_example] activated
+INFO	  [core] starting server
+INFO	  [uvicorn.error] Started server process [38136]
+INFO	  [uvicorn.error] Waiting for application startup.
+INFO	  [uvicorn.error] Application startup complete.
+INFO	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  [uvicorn.error] Shutting down
+INFO	  [uvicorn.error] Waiting for application shutdown.
+INFO	  [uvicorn.error] Application shutdown complete.
+INFO	  [uvicorn.error] Finished server process [38136]
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [plug_example] loaded
+INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  [plug_example] activated
+INFO	  [core] starting server
+INFO	  [uvicorn.error] Started server process [47740]
+INFO	  [uvicorn.error] Waiting for application startup.
+INFO	  [uvicorn.error] Application startup complete.
+INFO	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  [uvicorn.error] Shutting down
+INFO	  [uvicorn.error] Waiting for application shutdown.
+INFO	  [uvicorn.error] Application shutdown complete.
+INFO	  [uvicorn.error] Finished server process [47740]
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [plug_example] loaded
+INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  [plug_example] activated
+INFO	  [core] starting server
+INFO	  [uvicorn.error] Started server process [47524]
+INFO	  [uvicorn.error] Waiting for application startup.
+INFO	  [uvicorn.error] Application startup complete.
+INFO	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  [uvicorn.error] Shutting down
+INFO	  [uvicorn.error] Waiting for application shutdown.
+INFO	  [uvicorn.error] Application shutdown complete.
+INFO	  [uvicorn.error] Finished server process [47524]
+INFO	  [core] initializing plugin manager
+INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  [plug_example] loaded
+INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  [plug_example] activated
+INFO	  [core] starting server
+INFO	  [uvicorn.error] Started server process [47468]
+INFO	  [uvicorn.error] Waiting for application startup.
+INFO	  [uvicorn.error] Application startup complete.
+INFO	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  [uvicorn.error] Shutting down
+INFO	  [uvicorn.error] Waiting for application shutdown.
+INFO	  [uvicorn.error] Application shutdown complete.
+INFO	  [uvicorn.error] Finished server process [47468]
+INFO	  2023-03-02 01:05:27,893	  [core] initializing plugin manager
+INFO	  2023-03-02 01:05:27,893	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  2023-03-02 01:05:27,898	  [plug_example] loaded
+INFO	  2023-03-02 01:05:27,898	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  2023-03-02 01:05:27,899	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  2023-03-02 01:05:27,900	  [plug_example] activated
+INFO	  2023-03-02 01:05:27,900	  [core] starting server
+INFO	  2023-03-02 01:05:28,470	  [uvicorn.error] Started server process [12332]
+INFO	  2023-03-02 01:05:28,471	  [uvicorn.error] Waiting for application startup.
+INFO	  2023-03-02 01:05:28,471	  [uvicorn.error] Application startup complete.
+INFO	  2023-03-02 01:05:28,472	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  2023-03-02 01:05:59,832	  [uvicorn.error] Shutting down
+INFO	  2023-03-02 01:05:59,944	  [uvicorn.error] Waiting for application shutdown.
+INFO	  2023-03-02 01:05:59,944	  [uvicorn.error] Application shutdown complete.
+INFO	  2023-03-02 01:05:59,944	  [uvicorn.error] Finished server process [12332]
+INFO	  1677690360.8167248	  [core] initializing plugin manager
+INFO	  1677690360.8167248	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  1677690360.820724	  [plug_example] loaded
+INFO	  1677690360.820724	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  1677690360.8217	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  1677690360.8217	  [plug_example] activated
+INFO	  1677690360.8217	  [core] starting server
+INFO	  1677690361.385491	  [uvicorn.error] Started server process [19660]
+INFO	  1677690361.3865426	  [uvicorn.error] Waiting for application startup.
+INFO	  1677690361.3865426	  [uvicorn.error] Application startup complete.
+INFO	  1677690361.3875685	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  1677690489.4371066	  [uvicorn.error] Shutting down
+INFO	  1677690489.5465367	  [uvicorn.error] Waiting for application shutdown.
+INFO	  1677690489.5465367	  [uvicorn.error] Application shutdown complete.
+INFO	  1677690489.5465367	  [uvicorn.error] Finished server process [19660]
+2023-03-02 01:08:10,360	  INFO	  [core] initializing plugin manager
+2023-03-02 01:08:10,361	  INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+2023-03-02 01:08:10,365	  INFO	  [plug_example] loaded
+2023-03-02 01:08:10,365	  INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+2023-03-02 01:08:10,366	  WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+2023-03-02 01:08:10,366	  INFO	  [plug_example] activated
+2023-03-02 01:08:10,366	  INFO	  [core] starting server
+2023-03-02 01:08:10,938	  INFO	  [uvicorn.error] Started server process [9008]
+2023-03-02 01:08:10,939	  INFO	  [uvicorn.error] Waiting for application startup.
+2023-03-02 01:08:10,940	  INFO	  [uvicorn.error] Application startup complete.
+2023-03-02 01:08:10,940	  INFO	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+2023-03-02 01:08:38,938	  INFO	  [uvicorn.error] Shutting down
+2023-03-02 01:08:39,046	  INFO	  [uvicorn.error] Waiting for application shutdown.
+2023-03-02 01:08:39,046	  INFO	  [uvicorn.error] Application shutdown complete.
+2023-03-02 01:08:39,046	  INFO	  [uvicorn.error] Finished server process [9008]
+2023-03-02 01:08:39,971  INFO	  [core] initializing plugin manager
+2023-03-02 01:08:39,972  INFO	  [plugin_manager] load plugin: [1;33mexample[0m
+2023-03-02 01:08:39,976  INFO	  [plug_example] loaded
+2023-03-02 01:08:39,976  INFO	  [plugin_manager] load plugin: [1;33mnothing[0m
+2023-03-02 01:08:39,977  WARNING	  [plugin_manager] plugin 'nothing' does not implement load method
+2023-03-02 01:08:39,977  INFO	  [plug_example] activated
+2023-03-02 01:08:39,977  INFO	  [core] starting server
+2023-03-02 01:08:40,548  INFO	  [uvicorn.error] Started server process [20224]
+2023-03-02 01:08:40,549  INFO	  [uvicorn.error] Waiting for application startup.
+2023-03-02 01:08:40,550  INFO	  [uvicorn.error] Application startup complete.
+2023-03-02 01:08:40,550  INFO	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+2023-03-02 01:09:01,791  INFO	  [uvicorn.error] Shutting down
+2023-03-02 01:09:01,899  INFO	  [uvicorn.error] Waiting for application shutdown.
+2023-03-02 01:09:01,899  INFO	  [uvicorn.error] Application shutdown complete.
+2023-03-02 01:09:01,899  INFO	  [uvicorn.error] Finished server process [20224]
+INFO	2023-03-02 01:09:02,793	  [core] initializing plugin manager
+INFO	2023-03-02 01:09:02,794	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	2023-03-02 01:09:02,798	  [plug_example] loaded
+INFO	2023-03-02 01:09:02,798	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	2023-03-02 01:09:02,799	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	2023-03-02 01:09:02,799	  [plug_example] activated
+INFO	2023-03-02 01:09:02,799	  [core] starting server
+INFO	2023-03-02 01:09:03,367	  [uvicorn.error] Started server process [29760]
+INFO	2023-03-02 01:09:03,369	  [uvicorn.error] Waiting for application startup.
+INFO	2023-03-02 01:09:03,369	  [uvicorn.error] Application startup complete.
+INFO	2023-03-02 01:09:03,369	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	2023-03-02 01:09:13,024	  [uvicorn.error] Shutting down
+INFO	2023-03-02 01:09:13,135	  [uvicorn.error] Waiting for application shutdown.
+INFO	2023-03-02 01:09:13,135	  [uvicorn.error] Application shutdown complete.
+INFO	2023-03-02 01:09:13,135	  [uvicorn.error] Finished server process [29760]
+INFO	  2023-03-02 01:09:14,088	  [core] initializing plugin manager
+INFO	  2023-03-02 01:09:14,089	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  2023-03-02 01:09:14,093	  [plug_example] loaded
+INFO	  2023-03-02 01:09:14,094	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  2023-03-02 01:09:14,095	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  2023-03-02 01:09:14,095	  [plug_example] activated
+INFO	  2023-03-02 01:09:14,095	  [core] starting server
+INFO	  2023-03-02 01:09:14,664	  [uvicorn.error] Started server process [44648]
+INFO	  2023-03-02 01:09:14,665	  [uvicorn.error] Waiting for application startup.
+INFO	  2023-03-02 01:09:14,665	  [uvicorn.error] Application startup complete.
+INFO	  2023-03-02 01:09:14,666	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  2023-03-02 01:09:50,681	  [uvicorn.error] Shutting down
+INFO	  2023-03-02 01:09:50,791	  [uvicorn.error] Waiting for application shutdown.
+INFO	  2023-03-02 01:09:50,791	  [uvicorn.error] Application shutdown complete.
+INFO	  2023-03-02 01:09:50,791	  [uvicorn.error] Finished server process [44648]
+INFO	  2023-03-02 01:09:51	  [core] initializing plugin manager
+INFO	  2023-03-02 01:09:51	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  2023-03-02 01:09:51	  [plug_example] loaded
+INFO	  2023-03-02 01:09:51	  [plugin_manager] load plugin: [1;33mnothing[0m
+WARNING	  2023-03-02 01:09:51	  [plugin_manager] plugin 'nothing' does not implement load method
+INFO	  2023-03-02 01:09:51	  [plug_example] activated
+INFO	  2023-03-02 01:09:51	  [core] starting server
+INFO	  2023-03-02 01:09:52	  [uvicorn.error] Started server process [41472]
+INFO	  2023-03-02 01:09:52	  [uvicorn.error] Waiting for application startup.
+INFO	  2023-03-02 01:09:52	  [uvicorn.error] Application startup complete.
+INFO	  2023-03-02 01:09:52	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
