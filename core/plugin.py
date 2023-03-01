@@ -46,7 +46,6 @@ class PluginManager:
                     plugin_class = getattr(plugin_module, plugin_name.capitalize())
                     setattr(plugin_class, '_logger_name', f'plug_{plugin_name}')
                     plugin = plugin_class()
-                    print(plugin.__getmethods__())
                     try:
                         plugin.load()
                     except NotImplementedError:
