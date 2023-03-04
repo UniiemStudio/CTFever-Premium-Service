@@ -87,12 +87,22 @@ class PluginManager:
         if plugin_name not in self.plugins:
             raise AttributeError(f'\'{plugin_name}\' is not a plugin')
         plugin = self.plugins[plugin_name]
+        if method_name not in plugin.__getmethods__():
+            raise AttributeError(f'Plugin \'{plugin_name}\' has no method \'{method_name}\'')
         if len(plugin.__getmethods__()[method_name]) == 0:
             return await plugin.__callmethod__(method_name)
         if len(plugin.__getmethods__()[method_name]) != len(args):
             raise AttributeError(f'\'{method_name}\' takes {len(plugin.__getmethods__()[method_name])} arguments '
                                  f'({len(args)} given)')
         return await plugin.__callmethod__(method_name, *args, **kwargs)
+
+    def get_plugin_logger(self, plugin_name):
+        if plugin_name not in self.plugins:
+            raise AttributeError(f'\'{plugin_name}\' is not a plugin')
+        else:
+            if hasattr(self.plugins[plugin_name], 'logger'):
+                return getattr(self.plugins[plugin_name], 'logger')
+        return logging.getLogger(f'plug_mgr:{plugin_name}')
 
     def unload_plugins(self):
         for plugin_name, plugin in self.plugins.items():

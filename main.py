@@ -58,7 +58,8 @@ async def plugin_call(
         logger.info(f'arg type: {type(args)}')
         ret = await plugin_manager.call_plugin_method(plugin_name, method, args)
     except Exception as e:
-        logger.error(e)
+        # log thru plugin logger
+        plugin_manager.get_plugin_logger(plugin_name).error(e, exc_info=True)
         raise HTTPException(500, str(e))
     return ret
 

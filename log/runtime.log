@@ -3767,3 +3767,201 @@ ERROR	  2023-03-03 16:35:05	  [core] 'NoneType' object is not subscriptable
 INFO	  2023-03-03 16:35:05	  [uvicorn.access] 127.0.0.1:10943 - "POST /call/nothing?method=add HTTP/1.1" 500
 INFO	  2023-03-03 16:36:19	  [core] arg type: <class 'dict'>
 INFO	  2023-03-03 16:36:19	  [uvicorn.access] 127.0.0.1:11092 - "POST /call/nothing?method=add HTTP/1.1" 200
+INFO	  2023-03-03 16:48:33	  [uvicorn.error] Shutting down
+INFO	  2023-03-03 16:48:33	  [uvicorn.error] Waiting for application shutdown.
+INFO	  2023-03-03 16:48:33	  [uvicorn.error] Application shutdown complete.
+INFO	  2023-03-03 16:48:33	  [uvicorn.error] Finished server process [20092]
+INFO	  2023-03-03 16:48:34	  [core] initializing plugin manager
+INFO	  2023-03-03 16:48:34	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  2023-03-03 16:48:34	  [plug_example] loaded
+INFO	  2023-03-03 16:48:34	  [plugin_manager] load plugin: [1;33mnothing[0m
+INFO	  2023-03-03 16:48:34	  [plug_nothing] loaded
+INFO	  2023-03-03 16:48:34	  [plug_example] activated
+INFO	  2023-03-03 16:48:34	  [plug_nothing] activated
+INFO	  2023-03-03 16:48:34	  [core] starting server
+INFO	  2023-03-03 16:48:35	  [uvicorn.error] Started server process [11240]
+INFO	  2023-03-03 16:48:35	  [uvicorn.error] Waiting for application startup.
+INFO	  2023-03-03 16:48:35	  [uvicorn.error] Application startup complete.
+INFO	  2023-03-03 16:48:35	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  2023-03-03 16:48:42	  [core] arg type: <class 'NoneType'>
+ERROR	  2023-03-03 16:48:42	  [plug_nothing] 'NoneType' object is not subscriptable
+INFO	  2023-03-03 16:48:42	  [uvicorn.access] 127.0.0.1:13740 - "POST /call/nothing?method=add HTTP/1.1" 500
+INFO	  2023-03-03 23:09:37	  [core] arg type: <class 'dict'>
+INFO	  2023-03-03 23:09:37	  [uvicorn.access] 127.0.0.1:7259 - "POST /call/nothing?method=add HTTP/1.1" 200
+INFO	  2023-03-04 08:34:20	  [uvicorn.error] Shutting down
+INFO	  2023-03-04 08:34:20	  [uvicorn.error] Waiting for application shutdown.
+INFO	  2023-03-04 08:34:20	  [uvicorn.error] Application shutdown complete.
+INFO	  2023-03-04 08:34:20	  [uvicorn.error] Finished server process [11240]
+INFO	  2023-03-04 08:34:21	  [core] initializing plugin manager
+INFO	  2023-03-04 08:34:21	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  2023-03-04 08:34:21	  [plug_example] loaded
+INFO	  2023-03-04 08:34:21	  [plugin_manager] load plugin: [1;33mnothing[0m
+INFO	  2023-03-04 08:34:21	  [plug_nothing] loaded
+INFO	  2023-03-04 08:34:21	  [plug_example] activated
+INFO	  2023-03-04 08:34:21	  [plug_nothing] activated
+INFO	  2023-03-04 08:34:21	  [core] starting server
+INFO	  2023-03-04 08:34:21	  [uvicorn.error] Started server process [13952]
+INFO	  2023-03-04 08:34:21	  [uvicorn.error] Waiting for application startup.
+INFO	  2023-03-04 08:34:21	  [uvicorn.error] Application startup complete.
+INFO	  2023-03-04 08:34:21	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  2023-03-04 08:34:33	  [core] arg type: <class 'dict'>
+INFO	  2023-03-04 08:34:38	  [uvicorn.access] 127.0.0.1:14810 - "POST /call/example?method=test HTTP/1.1" 200
+INFO	  2023-03-04 08:34:45	  [core] arg type: <class 'NoneType'>
+ERROR	  2023-03-04 08:34:45	  [plug_nothing] 'NoneType' object is not subscriptable
+INFO	  2023-03-04 08:34:45	  [uvicorn.access] 127.0.0.1:14839 - "POST /call/nothing?method=add HTTP/1.1" 500
+INFO	  2023-03-04 08:36:46	  [uvicorn.access] 127.0.0.1:1374 - "GET /available-futures HTTP/1.1" 200
+INFO	  2023-03-04 08:37:11	  [uvicorn.access] 127.0.0.1:1523 - "GET /available-futures HTTP/1.1" 200
+INFO	  2023-03-04 08:37:28	  [core] arg type: <class 'dict'>
+INFO	  2023-03-04 08:37:28	  [uvicorn.access] 127.0.0.1:1537 - "POST /call/example?method=echo HTTP/1.1" 200
+INFO	  2023-03-04 08:37:31	  [core] arg type: <class 'dict'>
+INFO	  2023-03-04 08:37:31	  [uvicorn.access] 127.0.0.1:1537 - "POST /call/example?method=echo HTTP/1.1" 200
+INFO	  2023-03-04 08:37:37	  [core] arg type: <class 'dict'>
+ERROR	  2023-03-04 08:37:37	  [plug_nothing] 'echo'
+INFO	  2023-03-04 08:37:37	  [uvicorn.access] 127.0.0.1:1571 - "POST /call/nothing?method=echo HTTP/1.1" 500
+INFO	  2023-03-04 08:39:35	  [uvicorn.error] Shutting down
+INFO	  2023-03-04 08:39:35	  [uvicorn.error] Waiting for application shutdown.
+INFO	  2023-03-04 08:39:35	  [uvicorn.error] Application shutdown complete.
+INFO	  2023-03-04 08:39:35	  [uvicorn.error] Finished server process [13952]
+INFO	  2023-03-04 08:39:36	  [core] initializing plugin manager
+INFO	  2023-03-04 08:39:36	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  2023-03-04 08:39:36	  [plug_example] loaded
+INFO	  2023-03-04 08:39:36	  [plugin_manager] load plugin: [1;33mnothing[0m
+INFO	  2023-03-04 08:39:36	  [plug_nothing] loaded
+INFO	  2023-03-04 08:39:36	  [plug_example] activated
+INFO	  2023-03-04 08:39:36	  [plug_nothing] activated
+INFO	  2023-03-04 08:39:36	  [core] starting server
+INFO	  2023-03-04 08:39:36	  [uvicorn.error] Started server process [7052]
+INFO	  2023-03-04 08:39:36	  [uvicorn.error] Waiting for application startup.
+INFO	  2023-03-04 08:39:36	  [uvicorn.error] Application startup complete.
+INFO	  2023-03-04 08:39:36	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  2023-03-04 08:39:42	  [uvicorn.error] Shutting down
+INFO	  2023-03-04 08:39:42	  [uvicorn.error] Waiting for application shutdown.
+INFO	  2023-03-04 08:39:42	  [uvicorn.error] Application shutdown complete.
+INFO	  2023-03-04 08:39:42	  [uvicorn.error] Finished server process [7052]
+INFO	  2023-03-04 08:40:36	  [core] initializing plugin manager
+INFO	  2023-03-04 08:40:37	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  2023-03-04 08:40:37	  [plug_example] loaded
+INFO	  2023-03-04 08:40:37	  [plugin_manager] load plugin: [1;33mnothing[0m
+INFO	  2023-03-04 08:40:37	  [plug_nothing] loaded
+INFO	  2023-03-04 08:40:37	  [plug_example] activated
+INFO	  2023-03-04 08:40:37	  [plug_nothing] activated
+INFO	  2023-03-04 08:40:37	  [core] starting server
+INFO	  2023-03-04 08:40:37	  [uvicorn.error] Started server process [31640]
+INFO	  2023-03-04 08:40:37	  [uvicorn.error] Waiting for application startup.
+INFO	  2023-03-04 08:40:37	  [uvicorn.error] Application startup complete.
+INFO	  2023-03-04 08:40:37	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  2023-03-04 08:40:39	  [uvicorn.error] Shutting down
+INFO	  2023-03-04 08:40:40	  [uvicorn.error] Waiting for application shutdown.
+INFO	  2023-03-04 08:40:40	  [uvicorn.error] Application shutdown complete.
+INFO	  2023-03-04 08:40:40	  [uvicorn.error] Finished server process [31640]
+INFO	  2023-03-04 08:43:11	  [core] initializing plugin manager
+INFO	  2023-03-04 08:43:41	  [core] initializing plugin manager
+INFO	  2023-03-04 08:43:41	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  2023-03-04 08:43:41	  [plug_example] loaded
+INFO	  2023-03-04 08:43:41	  [plugin_manager] load plugin: [1;33mnothing[0m
+INFO	  2023-03-04 08:43:41	  [plug_nothing] loaded
+INFO	  2023-03-04 08:43:41	  [plug_example] activated
+INFO	  2023-03-04 08:43:41	  [plug_nothing] activated
+INFO	  2023-03-04 08:43:41	  [core] starting server
+INFO	  2023-03-04 08:43:42	  [uvicorn.error] Started server process [26620]
+INFO	  2023-03-04 08:43:42	  [uvicorn.error] Waiting for application startup.
+INFO	  2023-03-04 08:43:42	  [uvicorn.error] Application startup complete.
+INFO	  2023-03-04 08:43:42	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  2023-03-04 08:47:26	  [core] arg type: <class 'NoneType'>
+ERROR	  2023-03-04 08:47:26	  [plug_nothing] 'NoneType' object is not subscriptable
+INFO	  2023-03-04 08:47:26	  [uvicorn.access] 127.0.0.1:2617 - "POST /call/nothing?method=add HTTP/1.1" 500
+INFO	  2023-03-04 08:47:51	  [uvicorn.error] Shutting down
+INFO	  2023-03-04 08:47:51	  [uvicorn.error] Waiting for application shutdown.
+INFO	  2023-03-04 08:47:51	  [uvicorn.error] Application shutdown complete.
+INFO	  2023-03-04 08:47:51	  [uvicorn.error] Finished server process [26620]
+INFO	  2023-03-04 08:47:52	  [core] initializing plugin manager
+INFO	  2023-03-04 08:47:52	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  2023-03-04 08:47:52	  [plug_example] loaded
+INFO	  2023-03-04 08:47:52	  [plugin_manager] load plugin: [1;33mnothing[0m
+INFO	  2023-03-04 08:47:52	  [plug_nothing] loaded
+INFO	  2023-03-04 08:47:52	  [plug_example] activated
+INFO	  2023-03-04 08:47:52	  [plug_nothing] activated
+INFO	  2023-03-04 08:47:52	  [core] starting server
+INFO	  2023-03-04 08:47:52	  [uvicorn.error] Started server process [30644]
+INFO	  2023-03-04 08:47:52	  [uvicorn.error] Waiting for application startup.
+INFO	  2023-03-04 08:47:52	  [uvicorn.error] Application startup complete.
+INFO	  2023-03-04 08:47:52	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  2023-03-04 08:47:55	  [core] arg type: <class 'NoneType'>
+ERROR	  2023-03-04 08:47:55	  [plug_nothing] 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "D:\PNDFSH\Project\CTFever-Premium-Gen3\main.py", line 59, in plugin_call
+    ret = await plugin_manager.call_plugin_method(plugin_name, method, args)
+  File "D:\PNDFSH\Project\CTFever-Premium-Gen3\core\plugin.py", line 95, in call_plugin_method
+    return await plugin.__callmethod__(method_name, *args, **kwargs)
+  File "D:\PNDFSH\Project\CTFever-Premium-Gen3\core\plugin.py", line 27, in __callmethod__
+    return method(*args, **kwargs)
+  File "D:\PNDFSH\Project\CTFever-Premium-Gen3\plugins\nothing.py", line 16, in add
+    return {'result': int(arg['a']) + int(arg['b'])}
+TypeError: 'NoneType' object is not subscriptable
+INFO	  2023-03-04 08:47:55	  [uvicorn.access] 127.0.0.1:2674 - "POST /call/nothing?method=add HTTP/1.1" 500
+INFO	  2023-03-04 09:00:34	  [uvicorn.access] 127.0.0.1:3517 - "GET /docs HTTP/1.1" 200
+INFO	  2023-03-04 09:00:35	  [uvicorn.access] 127.0.0.1:3517 - "GET /openapi.json HTTP/1.1" 200
+INFO	  2023-03-04 09:45:48	  [core] arg type: <class 'NoneType'>
+ERROR	  2023-03-04 09:45:48	  [plug_nothing] 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "D:\PNDFSH\Project\CTFever-Premium-Gen3\main.py", line 59, in plugin_call
+    ret = await plugin_manager.call_plugin_method(plugin_name, method, args)
+  File "D:\PNDFSH\Project\CTFever-Premium-Gen3\core\plugin.py", line 95, in call_plugin_method
+    return await plugin.__callmethod__(method_name, *args, **kwargs)
+  File "D:\PNDFSH\Project\CTFever-Premium-Gen3\core\plugin.py", line 27, in __callmethod__
+    return method(*args, **kwargs)
+  File "D:\PNDFSH\Project\CTFever-Premium-Gen3\plugins\nothing.py", line 16, in add
+    return {'result': int(arg['a']) + int(arg['b'])}
+TypeError: 'NoneType' object is not subscriptable
+INFO	  2023-03-04 09:45:48	  [uvicorn.access] 127.0.0.1:6651 - "POST /call/nothing?method=add HTTP/1.1" 500
+INFO	  2023-03-04 09:45:50	  [core] arg type: <class 'dict'>
+INFO	  2023-03-04 09:45:50	  [uvicorn.access] 127.0.0.1:6651 - "POST /call/nothing?method=add HTTP/1.1" 200
+INFO	  2023-03-04 09:45:53	  [core] arg type: <class 'dict'>
+INFO	  2023-03-04 09:45:54	  [core] arg type: <class 'dict'>
+ERROR	  2023-03-04 09:45:54	  [plug_nothing] 'echo'
+Traceback (most recent call last):
+  File "D:\PNDFSH\Project\CTFever-Premium-Gen3\main.py", line 59, in plugin_call
+    ret = await plugin_manager.call_plugin_method(plugin_name, method, args)
+  File "D:\PNDFSH\Project\CTFever-Premium-Gen3\core\plugin.py", line 90, in call_plugin_method
+    if len(plugin.__getmethods__()[method_name]) == 0:
+KeyError: 'echo'
+INFO	  2023-03-04 09:45:54	  [uvicorn.access] 127.0.0.1:6656 - "POST /call/nothing?method=echo HTTP/1.1" 500
+INFO	  2023-03-04 09:45:58	  [uvicorn.access] 127.0.0.1:6651 - "POST /call/example?method=test HTTP/1.1" 200
+INFO	  2023-03-04 09:47:17	  [uvicorn.error] Shutting down
+INFO	  2023-03-04 09:47:17	  [uvicorn.error] Waiting for application shutdown.
+INFO	  2023-03-04 09:47:17	  [uvicorn.error] Application shutdown complete.
+INFO	  2023-03-04 09:47:17	  [uvicorn.error] Finished server process [30644]
+INFO	  2023-03-04 09:47:18	  [core] initializing plugin manager
+INFO	  2023-03-04 09:47:18	  [plugin_manager] load plugin: [1;33mexample[0m
+INFO	  2023-03-04 09:47:18	  [plug_example] loaded
+INFO	  2023-03-04 09:47:18	  [plugin_manager] load plugin: [1;33mnothing[0m
+INFO	  2023-03-04 09:47:18	  [plug_nothing] loaded
+INFO	  2023-03-04 09:47:18	  [plug_example] activated
+INFO	  2023-03-04 09:47:18	  [plug_nothing] activated
+INFO	  2023-03-04 09:47:18	  [core] starting server
+INFO	  2023-03-04 09:47:19	  [uvicorn.error] Started server process [31708]
+INFO	  2023-03-04 09:47:19	  [uvicorn.error] Waiting for application startup.
+INFO	  2023-03-04 09:47:19	  [uvicorn.error] Application startup complete.
+INFO	  2023-03-04 09:47:19	  [uvicorn.error] Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO	  2023-03-04 09:47:20	  [core] arg type: <class 'dict'>
+ERROR	  2023-03-04 09:47:20	  [plug_nothing] 'nothing' has no method 'echo'
+Traceback (most recent call last):
+  File "D:\PNDFSH\Project\CTFever-Premium-Gen3\main.py", line 59, in plugin_call
+    ret = await plugin_manager.call_plugin_method(plugin_name, method, args)
+  File "D:\PNDFSH\Project\CTFever-Premium-Gen3\core\plugin.py", line 91, in call_plugin_method
+    raise AttributeError(f'\'{plugin_name}\' has no method \'{method_name}\'')
+AttributeError: 'nothing' has no method 'echo'
+INFO	  2023-03-04 09:47:20	  [uvicorn.access] 127.0.0.1:6719 - "POST /call/nothing?method=echo HTTP/1.1" 500
+INFO	  2023-03-04 09:52:36	  [core] arg type: <class 'dict'>
+INFO	  2023-03-04 09:52:37	  [core] arg type: <class 'dict'>
+ERROR	  2023-03-04 09:52:37	  [plug_nothing] 'nothing' has no method 'echo'
+Traceback (most recent call last):
+  File "D:\PNDFSH\Project\CTFever-Premium-Gen3\main.py", line 59, in plugin_call
+    ret = await plugin_manager.call_plugin_method(plugin_name, method, args)
+  File "D:\PNDFSH\Project\CTFever-Premium-Gen3\core\plugin.py", line 91, in call_plugin_method
+    raise AttributeError(f'Plugin \'{plugin_name}\' has no method \'{method_name}\'')
+AttributeError: 'nothing' has no method 'echo'
+INFO	  2023-03-04 09:52:37	  [uvicorn.access] 127.0.0.1:7005 - "POST /call/nothing?method=echo HTTP/1.1" 500
+INFO	  2023-03-04 09:52:39	  [core] arg type: <class 'dict'>
+INFO	  2023-03-04 09:52:39	  [uvicorn.access] 127.0.0.1:7005 - "POST /call/nothing?method=add HTTP/1.1" 200
+INFO	  2023-03-04 09:52:41	  [uvicorn.access] 127.0.0.1:7003 - "POST /call/example?method=test HTTP/1.1" 200
