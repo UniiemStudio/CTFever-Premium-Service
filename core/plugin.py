@@ -15,6 +15,13 @@ class Plugin:
         self.logger = logging.getLogger(self._logger_name)
 
     async def __callmethod__(self, method_name, *args, **kwargs):
+        """
+        调用插件公开的方法
+        :param method_name: 方法名
+        :param args:        参数
+        :param kwargs:      键值对参数
+        :return:            执行结果
+        """
         if method_name in reserved_plugin_methods:
             raise AttributeError(f'cannot call reserved method \'{method_name}\'')
         elif method_name not in self.__getmethods__():
@@ -29,6 +36,10 @@ class Plugin:
             raise AttributeError(f'\'{method_name}\' is not callable')
 
     def __getmethods__(self):
+        """
+        获取插件除保留方法外的所有方法
+        :return: 方法名列表
+        """
         methods = [method for method in dir(self)
                    if not method.startswith('_')
                    and method not in reserved_plugin_methods]
@@ -38,10 +49,27 @@ class Plugin:
             ret[method] = list(filter(lambda x: x != 'self', args))
         return ret
 
+    # todo: params validater
+    def params_validater(self, params):
+        """
+        重写此方法，在调用时验证参数是否合法
+        :param params:  待验证的参数
+        :return:        参数是否合法
+        """
+        return True
+
     def load(self):
+        """
+        插件被加载时将调用此方法
+        * 该方法必须重写
+        """
         raise NotImplementedError('Not yet implemented.')
 
     def unload(self):
+        """
+        插件被卸载时将调用此方法
+        * 该方法必须重写
+        """
         raise NotImplementedError('Not yet implemented.')
 
     def activate(self):
