@@ -1,20 +1,21 @@
-import asyncio
+import inspect
+import logging
 import logging
 import os
 import sys
 from time import sleep
 
 import uvicorn
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, UploadFile
 from fastapi import Form
-from pydantic import BaseModel
-from pydantic.fields import Any, Union, Json
+from pydantic.fields import Union, Json
 
 from core import PluginManager
 
 app = FastAPI()
 
 os.path.exists('log') or os.mkdir('log')
+os.path.exists('data') or os.mkdir('data')
 
 formatter = logging.Formatter(f'%(levelname)0.7s\t  %(asctime)0.19s\t  [%(name)s] %(message)s')
 console_handler = logging.StreamHandler(sys.stdout)
@@ -52,16 +53,33 @@ async def get_plugins():
 async def plugin_call(
         plugin_name: str,
         method: str,
-        args: Union[Json, None] = Form(None)
+        args: Union[Json, None] = Form(None),
+        file: Union[UploadFile, None] = Form(None)
 ):
     try:
-        logger.info(f'arg type: {type(args)}')
+        # logger.info(f'arg type: {type(args)}')
+        if not args:
+            args = {}
+        if file:
+            args['file'] = file
+        validater = plugin_manager.plugins[plugin_name].params_validater
+        if inspect.iscoroutinefunction(validater):
+            validate = await validater(args)
+        else:
+            validate = validater(args)
+        if validate is not False:
+            raise HTTPException(400, f'params invalid: {validate}')
         ret = await plugin_manager.call_plugin_method(plugin_name, method, args)
+    except HTTPException as e:
+        raise e
     except Exception as e:
         # log thru plugin logger
         plugin_manager.get_plugin_logger(plugin_name).error(e, exc_info=True)
         raise HTTPException(500, str(e))
-    return ret
+    return {
+        'status': 0,
+        'result': ret
+    }
 
 
 if __name__ == '__main__':
