@@ -1,8 +1,9 @@
+import asyncio
 import inspect
-import logging
 import logging
 import os
 import sys
+import time
 from time import sleep
 
 import uvicorn
@@ -27,13 +28,15 @@ file_handler.setFormatter(formatter)
 logging.basicConfig(level=logging.INFO, handlers=[console_handler, file_handler], encoding='UTF-8')
 logger = logging.getLogger('core')
 
+logger.info(f'running on {sys.platform}[{os.name.upper()} Kernel](python {sys.version}, pid: {os.getpid()})')
+
 logger.info('initializing plugin manager')
 plugin_manager = PluginManager('plugins')
 
 
 @app.get("/")
 async def root():
-    return {"message": "Hello World"}
+    return {"message": "CTFever Backend Service"}
 
 
 @app.get("/available-futures")
@@ -56,6 +59,9 @@ async def plugin_call(
         args: Union[Json, None] = Form(None),
         file: Union[UploadFile, None] = Form(None)
 ):
+    if plugin_name not in plugin_manager.plugins:
+        raise HTTPException(404, 'plugin not found')
+    t1 = time.time()
     try:
         # logger.info(f'arg type: {type(args)}')
         if not args:
@@ -78,6 +84,7 @@ async def plugin_call(
         raise HTTPException(500, str(e))
     return {
         'status': 0,
+        'spent': round(time.time() - t1, 3),
         'result': ret
     }
 
@@ -89,6 +96,7 @@ if __name__ == '__main__':
     sleep(0.5)
     uvicorn.run(
         app,
+        workers=1,
         host='127.0.0.1', port=8080,
         log_config={'version': 1, 'disable_existing_loggers': False}
     )

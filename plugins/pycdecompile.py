@@ -1,5 +1,9 @@
+import asyncio
+import hashlib
+import os
 import struct
 import subprocess
+import time
 
 from core import Plugin
 
@@ -154,22 +158,27 @@ class PycUtil:
         magic_word = int.from_bytes(magic[:2], 'little')
         return magic_word
 
-    def decompile_pyc(self, fullpath: str, output_comment: str = '# Decompiled on CTFever Premium'):
+    async def decompile_pyc(self, fullpath: str, output_comment: str = '# Decompiled on CTFever Premium',
+                            pycdc_path: str = 'pycdc'):
         pyc_version = self.magic_to_version(self.fetch_pyc_magic(fullpath))
+        # >= 3.9
         if pyc_version[0] >= 3 and pyc_version[1] >= 9:
-            decompiler = 'bin/pycdc'
+            decompiler = pycdc_path
             split_by = 2
         else:
             decompiler = 'decompyle3'
             split_by = 7
-        subp = subprocess.Popen(f'{decompiler} {fullpath}', shell=True, stdout=subprocess.PIPE,
-                                stderr=subprocess.STDOUT)
-        output = subp.stdout.readlines()[split_by:-1]
-        subp.stdout.close()
-        result = ''
-        for s in output:
-            result += str(s.decode('utf-8'))
-        return output_comment + '\r\n' + result.strip('\r\n')
+        # subp = subprocess.Popen(f'{decompiler} {fullpath}', shell=True, stdout=subprocess.PIPE,
+        #                         stderr=subprocess.STDOUT)
+        subp = await asyncio.create_subprocess_shell(
+            f'{decompiler} {fullpath}',
+            shell=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT
+        )
+        stdout, stderr = await subp.communicate()
+        output = stdout.decode()[split_by:-1]
+        return output_comment + '\r\n' + output.strip('\r\n')
 
 
 class Pycdecompile(Plugin):
@@ -201,8 +210,32 @@ class Pycdecompile(Plugin):
 
     async def decompile(self, params):
         await params.get('file').seek(0)
+        file_name = params.get('file').filename
+        file_basename, file_ext = os.path.splitext(file_name)
+        file_name_temp = f'{file_basename}_{hashlib.md5(str(time.time()).encode()).hexdigest()[:6]}{file_ext}'
         file_content = await params.get('file').read()
         version = self.pyc_util.magic_to_version(self.pyc_util.fetch_pyc_magic_from_bytes(file_content))
+        temporal_dir = os.path.join(self.data_dir(), 'temp')
+        file_save_path = os.path.join(temporal_dir, file_name_temp)
+        file_save_dir = os.path.dirname(file_save_path)
+        if not os.path.exists(file_save_dir):
+            os.makedirs(file_save_dir)
+        with open(file_save_path, 'wb') as f:
+            f.write(file_content)
+        # if not on windows, grant execute permission to pycdc
+        if os.name != 'nt':
+            os.chmod(os.path.join(self.data_dir(), 'pycdc', 'pycdc'), 0o755)
+        decompile_output = await self.pyc_util.decompile_pyc(
+            file_save_path,
+            pycdc_path=os.path.join(self.data_dir(), 'pycdc', 'pycdc')
+        )
+        if len(os.listdir(temporal_dir)) > 20:
+            files = os.listdir(temporal_dir)
+            files.sort(key=lambda fn: os.path.getmtime(os.path.join(temporal_dir, fn)))
+            os.remove(os.path.join(temporal_dir, files[0]))
         return {
             'version': f'{version[0]}.{version[1]}',
+            'version_tuple': version,
+            'original_filename': file_name,
+            'output': decompile_output
         }
