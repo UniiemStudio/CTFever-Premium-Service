@@ -7,7 +7,7 @@ import time
 from time import sleep
 
 import uvicorn
-from fastapi import FastAPI, HTTPException, UploadFile
+from fastapi import FastAPI, HTTPException, UploadFile, status
 from fastapi import Form
 from pydantic.fields import Union, Json
 
@@ -60,7 +60,7 @@ async def plugin_call(
         file: Union[UploadFile, None] = Form(None)
 ):
     if plugin_name not in plugin_manager.plugins:
-        raise HTTPException(404, 'plugin not found')
+        raise HTTPException(status.HTTP_404_NOT_FOUND, 'plugin not found')
     t1 = time.time()
     try:
         # logger.info(f'arg type: {type(args)}')
@@ -74,14 +74,14 @@ async def plugin_call(
         else:
             validate = validater(args)
         if validate is not False:
-            raise HTTPException(400, f'params invalid: {validate}')
+            raise HTTPException(status.HTTP_400_BAD_REQUEST, f'params invalid: {validate}')
         ret = await plugin_manager.call_plugin_method(plugin_name, method, args)
     except HTTPException as e:
         raise e
     except Exception as e:
         # log thru plugin logger
         plugin_manager.get_plugin_logger(plugin_name).error(e, exc_info=True)
-        raise HTTPException(500, str(e))
+        raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR, str(e))
     return {
         'status': 0,
         'spent': round(time.time() - t1, 3),
