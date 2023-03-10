@@ -164,7 +164,7 @@ class PycUtil:
         # >= 3.9
         if pyc_version[0] >= 3 and pyc_version[1] >= 9:
             decompiler = pycdc_path
-            decompiler_name = 'pycdc'
+            decompiler_name = 'Decompyle++ (pycdc)'
             split_by = 2
         else:
             decompiler = 'decompyle3'
@@ -177,7 +177,6 @@ class PycUtil:
             stderr=subprocess.STDOUT
         )
         stdout, stderr = await subp.communicate()
-        print(stdout.decode(encoding=('gbk' if os.name == 'nt' else 'utf-8'), errors='replace'))
         # output = stdout.decode(encoding=('gbk' if os.name == 'nt' else 'utf-8'), errors='replace')[split_by:-1]
         output = os.linesep.join(stdout.decode(
             encoding=('gbk' if os.name == 'nt' else 'utf-8'),
@@ -196,8 +195,8 @@ class Pycdecompile(Plugin):
 
     def load(self):
         self.fetch_data_package(
-            'https://file.i0x0i.ltd/api/v3/file/source/811/pycdc.zip'
-            '?sign=dIObWXS-g2kXvl1oUDUcHB1n1BnWHVDEpfGkTYEQEZY%3D%3A0'
+            'https://file.i0x0i.ltd/api/v3/file/source/812/pycdc.zip?'
+            'sign=lbXh0k4eLCpqZn13_xwkIH4zAlreD59jmZpjlpIdujA%3D%3A0'
         )
 
     def unload(self):
