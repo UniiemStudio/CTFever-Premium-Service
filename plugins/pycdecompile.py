@@ -164,12 +164,12 @@ class PycUtil:
         # >= 3.9
         if pyc_version[0] >= 3 and pyc_version[1] >= 9:
             decompiler = pycdc_path
+            decompiler_name = 'pycdc'
             split_by = 2
         else:
             decompiler = 'decompyle3'
+            decompiler_name = 'decompyle3'
             split_by = 7
-        # subp = subprocess.Popen(f'{decompiler} {fullpath}', shell=True, stdout=subprocess.PIPE,
-        #                         stderr=subprocess.STDOUT)
         subp = await asyncio.create_subprocess_shell(
             f'{decompiler} {fullpath}',
             shell=True,
@@ -177,8 +177,16 @@ class PycUtil:
             stderr=subprocess.STDOUT
         )
         stdout, stderr = await subp.communicate()
-        output = stdout.decode()[split_by:-1]
-        return output_comment + '\r\n' + output.strip('\r\n')
+        print(stdout.decode(encoding=('gbk' if os.name == 'nt' else 'utf-8'), errors='replace'))
+        # output = stdout.decode(encoding=('gbk' if os.name == 'nt' else 'utf-8'), errors='replace')[split_by:-1]
+        output = os.linesep.join(stdout.decode(
+            encoding=('gbk' if os.name == 'nt' else 'utf-8'),
+            errors='replace'
+        ).strip('\n').split(os.linesep)[split_by:-1])
+        return f'{output_comment}\n' \
+               f'# Decompile engine: {decompiler_name}\n' \
+               f'# Python version: {pyc_version[0]}.{pyc_version[1]}\n' \
+               f'{output}'
 
 
 class Pycdecompile(Plugin):
