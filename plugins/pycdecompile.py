@@ -181,7 +181,7 @@ class PycUtil:
         output = os.linesep.join(stdout.decode(
             encoding=('gbk' if os.name == 'nt' else 'utf-8'),
             errors='replace'
-        ).strip('\n').split(os.linesep)[split_by:-1])
+        ).strip('\n').split(os.linesep)[split_by:])
         return f'{output_comment}\n' \
                f'# Decompile engine: {decompiler_name}\n' \
                f'# Python version: {pyc_version[0]}.{pyc_version[1]}\n' \
