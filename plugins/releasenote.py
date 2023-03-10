@@ -17,14 +17,14 @@ class CfgUtil:
 
     def read_cfg(self):
         if not os.path.exists(self.cfg_path):
-            with open(self.cfg_path, 'w') as f:
+            with open(self.cfg_path, 'w', encoding='utf-8') as f:
                 f.write(json.dumps(self.default_cfg))
-        with open(self.cfg_path, 'r') as f:
+        with open(self.cfg_path, 'r', encoding='utf-8') as f:
             cfg = json.load(f)
         return cfg
 
     def write_cfg(self):
-        with open(self.cfg_path, 'w') as f:
+        with open(self.cfg_path, 'w', encoding='utf-8') as f:
             json.dump(self.cfg, f, indent=4)
 
     def get_cfg(self, key, default=None):
@@ -78,6 +78,7 @@ class Releasenote(Plugin):
         )
 
     def push_release(self, params):
+        title = params.get('title', None)
         version = params.get('version', None)
         content = params.get('content', None)
         if version is None or content is None:
@@ -86,6 +87,7 @@ class Releasenote(Plugin):
         releases = self.release_ctl.get_cfg('releases')
         releases.append({
             'timestamp': timestamp,
+            'title': title,
             'version': version,
             'content': content
         })
