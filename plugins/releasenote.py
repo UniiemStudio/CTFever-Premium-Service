@@ -7,48 +7,13 @@ from fastapi import HTTPException, status
 from core import Plugin
 
 
-class CfgUtil:
-    def __init__(self, data_dir: str, cfg_name: str = 'config.json', default_cfg=None):
-        self.default_cfg = default_cfg
-        if self.default_cfg is None:
-            self.default_cfg = {}
-        self.cfg_path = os.path.join(data_dir, cfg_name)
-        self.cfg = self.read_cfg()
-
-    def read_cfg(self):
-        if not os.path.exists(self.cfg_path):
-            with open(self.cfg_path, 'w', encoding='utf-8') as f:
-                f.write(json.dumps(self.default_cfg))
-        with open(self.cfg_path, 'r', encoding='utf-8') as f:
-            cfg = json.load(f)
-        return cfg
-
-    def write_cfg(self):
-        with open(self.cfg_path, 'w', encoding='utf-8') as f:
-            json.dump(self.cfg, f, indent=4)
-
-    def get_cfg(self, key, default=None):
-        return self.cfg.get(key, default)
-
-    def set_cfg(self, key, value):
-        self.cfg[key] = value
-        self.write_cfg()
-
-    def del_cfg(self, key):
-        self.cfg.pop(key)
-        self.write_cfg()
-
-    def get_all_cfg(self):
-        return self.cfg
-
-
 class Releasenote(Plugin):
     def __init__(self):
         super().__init__()
         self.release_ctl = None
 
     def load(self):
-        self.release_ctl = CfgUtil(self.data_dir(), 'releases.json', {
+        self.release_ctl = self.ConfigUtil(self.data_dir(), 'releases.json', {
             'latest': 1678496400,
             'releases': [
                 {

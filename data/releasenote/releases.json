@@ -1,0 +1,37 @@
+{
+  "latest": 1578496400,
+  "releases": [
+    {
+      "timestamp": 1578496400,
+      "version": "2.0.0",
+      "title": "Major Update",
+      "content": "本次重大更新对后端进行了完全重构，对前端进行了一系列优化，对现有的部分工具 UI 进行调整。本次更新完毕后将继续跟进 Todo List 和 Issues 中待完成工具的开发",
+      "changes": [
+        {
+          "type": "enchanted",
+          "content": "新的后端程序：使用插件 + 数据包模式，增强扩展性。优化并发性能。优化配置文件处理"
+        },
+        {
+          "type": "enchanted",
+          "content": "pyc 反编译工具：优化反编译速度，增加对 Windows(后端) 的支持。调整 UI，优化结果展示"
+        },
+        {
+          "type": "enchanted",
+          "content": "端口扫描工具：重写扫描逻辑，高并发大幅提高扫描速度"
+        },
+        {
+          "type": "add",
+          "content": "更新日志推送：打开 CTFever 时拉取自上次使用以来的更新日志并弹窗展示"
+        },
+        {
+          "type": "add",
+          "content": "新增 Base64 图片转换"
+        },
+        {
+          "type": "remove",
+          "content": "移除 ”温度换算“工具：多数用户反映该工具在 CTF 领域几乎没有用处，故移除此工具"
+        }
+      ]
+    }
+  ]
+}

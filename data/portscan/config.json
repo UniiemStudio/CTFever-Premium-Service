@@ -1,0 +1,31 @@
+{
+  "port_services": {
+    "1": "tcpmux",
+    "5": "rje",
+    "7": "echo",
+    "9": "discard",
+    "11": "systat",
+    "13": "daytime",
+    "22": "ssh",
+    "23": "telnet",
+    "25": "smtp",
+    "37": "time",
+    "42": "nameserver",
+    "43": "nicname",
+    "49": "tacacs",
+    "53": "domain",
+    "69": "tftp",
+    "70": "gopher",
+    "79": "finger",
+    "80": "http",
+    "88": "kerberos",
+    "95": "supdup",
+    "101": "hostname",
+    "102": "iso-tsap",
+    "103": "gppitnp",
+    "104": "acr-nema",
+    "109": "pop2",
+    "110": "pop3"
+  },
+  "host_blacklist": ["uniiem.com", "i0x0i.ltd"]
+}
