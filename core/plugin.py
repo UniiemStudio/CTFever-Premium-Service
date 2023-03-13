@@ -5,6 +5,7 @@ import os
 import re
 import time
 import zipfile
+from typing import List
 
 import patoolib
 import requests
@@ -45,10 +46,11 @@ class Plugin:
         else:
             raise AttributeError(f'\'{method_name}\' is not callable')
 
-    def __getmethods__(self):
+    def __getmethods__(self, exclude: List[str] = None):
         """
         获取插件除保留方法外的所有方法
-        :return: 方法名列表
+        :param exclude: 排除的方法名列表
+        :return:        方法名列表
         """
         methods = [method for method in dir(self)
                    if not method.startswith('_')
@@ -58,6 +60,10 @@ class Plugin:
         for method in methods:
             args = inspect.getfullargspec(getattr(self, method)).args
             ret[method] = list(filter(lambda x: x != 'self', args))
+        if exclude:
+            for method in exclude:
+                if method in ret:
+                    ret.pop(method)
         return ret
 
     def load(self):
