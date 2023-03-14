@@ -10,6 +10,7 @@ import uvicorn
 from fastapi import FastAPI, HTTPException, UploadFile, status
 from fastapi import Form
 from pydantic.fields import Union, Json
+from starlette.responses import FileResponse
 
 from core import PluginManager
 
@@ -82,6 +83,8 @@ async def plugin_call(
         # log thru plugin logger
         plugin_manager.get_plugin_logger(plugin_name).error(e, exc_info=True)
         raise HTTPException(status.HTTP_500_INTERNAL_SERVER_ERROR, str(e))
+    if type(ret) is FileResponse:
+        return ret
     return {
         'status': 0,
         'spent': round(time.time() - t1, 3),
