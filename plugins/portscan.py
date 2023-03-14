@@ -3,6 +3,8 @@ import socket
 import time
 from typing import List, Dict
 
+from fastapi import HTTPException
+
 from core import Plugin
 
 
@@ -75,25 +77,25 @@ class Portscan(Plugin):
             if "-" in p:
                 start_port, end_port = map(int, p.split("-"))
                 if check_range(list(range(start_port, end_port + 1)), 1, 65535):
-                    raise ValueError(f"invalid port range '{p}'")
+                    raise HTTPException(status_code=400, detail=f"invalid port range '{p}'")
                 if start_port > end_port:
                     start_port, end_port = end_port, start_port
                 port_list += list(range(start_port, end_port + 1))
             else:
                 if not p.isdigit():
-                    raise ValueError(f"invalid port '{p}'")
+                    raise HTTPException(status_code=400, detail=f"invalid port '{p}'")
                 if check_range([int(p)], 1, 65535):
-                    raise ValueError(f"invalid port '{p}'")
+                    raise HTTPException(status_code=400, detail=f"invalid port '{p}'")
                 port_list.append(int(p))
         if len(port_list) > 1000:
-            raise ValueError(f"too many ports, max 1000")
+            raise HTTPException(status_code=419, detail=f"too many ports, max 1000")
         t1 = time.time()
         try:
             addr_info = await asyncio.get_event_loop().getaddrinfo(host, None)
             ip_addr = addr_info[0][4][0]
             results = await self.scan_ports(ip_addr, port_list)
         except socket.gaierror as e:
-            raise ValueError(f"can not resolve '{host}'") from e
+            raise HTTPException(status_code=400, detail=f"can not resolve '{host}'") from e
         self.logger.info(f"scan {host}({ip_addr}) for {len(port_list)} port(s) in {round(time.time() - t1, 3)}s")
         return {
             "host": ip_addr,
@@ -105,5 +107,5 @@ class Portscan(Plugin):
     async def scan(self, params: dict) -> Dict[str, dict]:
         for host in self.HOST_BLACKLIST:
             if host in params.get('host'):
-                raise ValueError(f"host '{host}' is not allowed")
+                raise HTTPException(status_code=403, detail=f"host '{host}' is not allowed")
         return await self.scanner(params.get('host'), params.get('ports'))
