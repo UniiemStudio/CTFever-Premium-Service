@@ -1,4 +1,3 @@
-import asyncio
 import inspect
 import logging
 import os
@@ -10,11 +9,35 @@ import uvicorn
 from fastapi import FastAPI, HTTPException, UploadFile, status
 from fastapi import Form
 from pydantic.fields import Union, Json
+# noinspection PyProtectedMember
+from slowapi import Limiter, _rate_limit_exceeded_handler as rate_limit_exceeded_handler
+from slowapi.errors import RateLimitExceeded
+from slowapi.util import get_remote_address
+from starlette.middleware.cors import CORSMiddleware
+from starlette.requests import Request
 from starlette.responses import FileResponse
 
 from core import PluginManager
 
 app = FastAPI()
+
+origins = [
+    'https://ctfever.uniiem.com'
+    'http://localhost:3000'
+    'http://localhost'
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins='*',
+    allow_credentials=True,
+    allow_methods=['*'],
+    allow_headers=["*"],
+)
+
+limiter = Limiter(key_func=get_remote_address)
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, rate_limit_exceeded_handler)
 
 os.path.exists('log') or os.mkdir('log')
 os.path.exists('data') or os.mkdir('data')
@@ -54,7 +77,9 @@ async def get_plugins():
 
 
 @app.post("/call/{plugin_name}")
+@limiter.limit("180/minute")
 async def plugin_call(
+        request: Request,
         plugin_name: str,
         method: str,
         args: Union[Json, None] = Form(None),

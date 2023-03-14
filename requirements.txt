@@ -6,5 +6,6 @@ uvicorn==0.20.0
 fastapi==0.92.0
 pydantic==1.10.5
 tqdm==4.65.0
-binwalk==2.3.2+aaa4cc8
+binwalk==2.3.2+b70e7f4
 starlette==0.25.0
+slowapi==0.1.7
