@@ -1,0 +1,10 @@
+patool==1.12
+requests==2.28.2
+tqdm==
+setuptools==65.5.1
+uvicorn==0.20.0
+fastapi==0.92.0
+pydantic==1.10.5
+tqdm==4.65.0
+binwalk==2.3.2+aaa4cc8
+starlette==0.25.0

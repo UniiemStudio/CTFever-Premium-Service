@@ -1,27 +1,32 @@
+import hashlib
 import importlib
 import inspect
 import json
 import logging
 import os
 import re
+import shutil
 import time
 import zipfile
 from typing import List
 
 import patoolib
 import requests
+from fastapi import UploadFile
 from tqdm import tqdm
 
 from core.safe import singleton
 
 reserved_plugin_methods = ['load', 'unload', 'activate', 'deactivate', 'logger', 'data_dir', 'fs_write',
-                           'params_validater', 'fetch_data_package', 'methods']
+                           'params_validater', 'fetch_data_package', 'methods', 'ConfigUtil',
+                           'save_upload_file_as_temporary', 'keep_temporary_file', 'purge_temporary_files']
 
 
 class Plugin:
     _plugin_name = 'plugin'
     _logger_name = 'plugin'
     _data_dir = 'data/plugin'
+    _temp_dir = 'data/plugin/temp'
 
     def __init__(self):
         self.logger = logging.getLogger(self._logger_name)
@@ -169,6 +174,29 @@ class Plugin:
             self.logger.error(f'failed to retrieve data package info from {url}')
             PluginManager().unload_plugin(self._plugin_name, crash=True)
 
+    async def save_upload_file_as_temporary(self, file: UploadFile, sub_dir: str = ''):
+        origin_name = file.filename
+        origin_basename, origin_ext = os.path.splitext(origin_name)
+        temporal_name = f'{origin_basename}_{hashlib.md5(str(time.time()).encode()).hexdigest()[:6]}{origin_ext}'
+        file_content = await file.read()
+        file_save_path = os.path.join(self._temp_dir, sub_dir, temporal_name)
+        file_save_dir = os.path.dirname(file_save_path)
+        if not os.path.exists(file_save_dir):
+            os.makedirs(file_save_dir)
+        with open(file_save_path, 'wb') as f:
+            f.write(file_content)
+        return file_save_path, file_save_dir
+
+    def keep_temporary_file(self, keep_count: int = 10):
+        if len(os.listdir(self._temp_dir)) > keep_count:
+            files = os.listdir(self._temp_dir)
+            files.sort(key=lambda fn: os.path.getmtime(os.path.join(self._temp_dir, fn)))
+            os.remove(os.path.join(self._temp_dir, files[0]))
+
+    def purge_temporary_files(self):
+        shutil.rmtree(self._temp_dir)
+        os.mkdir(self._temp_dir)
+
     def fs_write(self, filename, content):
         file_path = os.path.join(self._data_dir, filename)
         with open(file_path, 'w+') as f:
@@ -243,6 +271,8 @@ class PluginManager:
                     # Assign a data directory and create it if not exists
                     setattr(plugin_class, '_data_dir', os.path.abspath(f'data/{plugin_name.lower()}'))
                     os.path.exists(getattr(plugin_class, '_data_dir')) or os.mkdir(getattr(plugin_class, '_data_dir'))
+                    setattr(plugin_class, '_temp_dir', os.path.join(getattr(plugin_class, '_data_dir'), 'temp'))
+                    os.path.exists(getattr(plugin_class, '_temp_dir')) or os.mkdir(getattr(plugin_class, '_temp_dir'))
                     plugin = plugin_class()
                     try:
                         plugin.load()
