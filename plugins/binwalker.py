@@ -59,11 +59,12 @@ class Binwalker(Plugin):
     def __getmethods__(self, exclude: List[str] = None):
         return super().__getmethods__(['do_scan'])
 
-    def do_scan(self, path):
+    async def do_scan(self, path):
         artifact_id = hashlib.md5(path.encode('utf-8')).hexdigest()
         artifacts = []
         signature_list: list = []
-        for module in binwalk.scan(path, signature=True, extract=True, quiet=True):
+        scan_result = await asyncio.to_thread(binwalk.scan, path, signature=True, extract=True, quiet=True)
+        for module in scan_result:
             for result in module.results:
                 result_for_resp = result
                 result_for_resp.file.name = os.path.basename(result.file.name)
@@ -165,7 +166,7 @@ class Binwalker(Plugin):
         if file.filename == '':
             raise HTTPException(status_code=400, detail='file is required')
         save_path, save_dir = await self.save_upload_file_as_temporary(file)
-        scan_result = self.do_scan(save_path)
+        scan_result = await asyncio.create_task(self.do_scan(save_path))
         ret = []
         for result in scan_result['signature']:
             ret.append({

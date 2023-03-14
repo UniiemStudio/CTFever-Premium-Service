@@ -5,7 +5,7 @@
       "timestamp": 1578496401,
       "version": "2.0.0",
       "title": "Major Update",
-      "content": "本次重大更新对后端进行了完全重构，对前端进行了一系列优化，对现有的部分工具 UI 进行调整。本次更新完毕后将继续跟进 Todo List 和 Issues 中待完成工具的开发",
+      "content": "本次重大更新对后端进行了完全重构；对前端进行了一系列优化，现有的部分工具 UI 进行调整。本次更新完毕后将继续跟进 Todo List 和 Issues 中待完成工具的开发",
       "changes": [
         {
           "type": "enchanted",
@@ -18,6 +18,10 @@
         {
           "type": "enchanted",
           "content": "端口扫描工具：重写扫描逻辑，高并发大幅提高扫描速度"
+        },
+        {
+          "type": "enchanted",
+          "content": "Binwalk：重写逻辑，优化性能和 IO 开销"
         },
         {
           "type": "add",
