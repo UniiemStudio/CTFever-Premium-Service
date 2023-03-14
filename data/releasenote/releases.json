@@ -28,10 +28,6 @@
           "content": "更新日志推送：打开 CTFever 时拉取自上次使用以来的更新日志并弹窗展示"
         },
         {
-          "type": "add",
-          "content": "新增 Base64 图片转换"
-        },
-        {
           "type": "remove",
           "content": "移除 ”温度换算“ 工具：食之无味弃之可惜"
         }
