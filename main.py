@@ -9,6 +9,7 @@ import uvicorn
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, UploadFile, status
 from fastapi import Form
+# noinspection PyPackageRequirements
 from pydantic.fields import Union, Json
 # noinspection PyProtectedMember
 from slowapi import Limiter, _rate_limit_exceeded_handler as rate_limit_exceeded_handler
@@ -62,6 +63,18 @@ plugin_manager = PluginManager('plugins')
 @app.get("/")
 async def root():
     return {"message": "CTFever Backend Service"}
+
+
+@app.get('/status',
+         description='Used to test whether the service is available',
+         response_description='Status and version info of the service')
+async def status_info():
+    return {
+        'service': 'CTFever Backend Service',
+        'gen': 2,
+        'version': '2.0.0',
+        'status': 'ok'
+    }
 
 
 @app.get("/available-futures")

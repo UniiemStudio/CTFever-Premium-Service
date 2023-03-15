@@ -1,5 +1,5 @@
 {
-  "latest": 1578496401,
+  "latest": 1678870676,
   "releases": [
     {
       "timestamp": 1578496401,
@@ -30,6 +30,22 @@
         {
           "type": "remove",
           "content": "移除 ”温度换算“ 工具：食之无味弃之可惜"
+        }
+      ]
+    },
+    {
+      "timestamp": 1678870676,
+      "version": "2.0.1",
+      "title": "Docker Support",
+      "content": "本次更新为后端程序增加了对 Docker 的支持",
+      "changes": [
+        {
+          "type": "add",
+          "content": "后端：Docker 支持"
+        },
+        {
+          "type": "add",
+          "content": "后端：状态接口"
         }
       ]
     }
