@@ -6,6 +6,7 @@ import time
 from time import sleep
 
 import uvicorn
+from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, UploadFile, status
 from fastapi import Form
 from pydantic.fields import Union, Json
@@ -49,7 +50,7 @@ console_handler.setFormatter(formatter)
 file_handler = logging.FileHandler('log/runtime.log', encoding='UTF-8')
 file_handler.setLevel(logging.INFO)
 file_handler.setFormatter(formatter)
-logging.basicConfig(level=logging.INFO, handlers=[console_handler, file_handler], encoding='UTF-8')
+logging.basicConfig(level=logging.INFO, handlers=[console_handler, file_handler])
 logger = logging.getLogger('core')
 
 logger.info(f'running on {sys.platform}[{os.name.upper()} Kernel](python {sys.version}, pid: {os.getpid()})')
@@ -118,6 +119,10 @@ async def plugin_call(
 
 
 if __name__ == '__main__':
+    env_path = '.env.dev'
+    if os.environ.get('ENVIRONMENT') == 'production':
+        env_path = '.env.prod'
+    load_dotenv(dotenv_path=env_path)
     plugin_manager.load_plugins()
     plugin_manager.activate_plugins()
     logger.info('starting server')
@@ -125,6 +130,6 @@ if __name__ == '__main__':
     uvicorn.run(
         app,
         workers=1,
-        host='127.0.0.1', port=8080,
+        host=os.getenv('HOST'), port=int(os.getenv('PORT')),
         log_config={'version': 1, 'disable_existing_loggers': False}
     )
