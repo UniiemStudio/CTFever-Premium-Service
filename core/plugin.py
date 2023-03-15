@@ -153,16 +153,23 @@ class Plugin:
                             self._data_dir,
                             os.path.splitext(os.path.basename(file_save_path))[0]
                         ),
-                        verbosity=-1
+                        verbosity=-1,
+                        interactive=False
                     )
                     # self.logger.info(f'\033[1;32m- extracted package: {file_name}\033[0m')
                 except patoolib.util.PatoolError as e:
                     if zipfile.is_zipfile(file_save_path):
                         with zipfile.ZipFile(file_save_path, 'r') as zip_file:
-                            zip_file.extractall(os.path.join(
+                            extract_folder = os.path.join(
                                 self._data_dir,
-                                os.path.splitext(os.path.basename(file_save_path))[0]
-                            ))
+                                os.path.splitext(os.path.basename(file_save_path))[0],
+                            )
+                            # zip_file.extractall(extract_folder)
+                            for member in zip_file.namelist():
+                                target_path = os.path.join(extract_folder, member)
+                                if os.path.exists(target_path):
+                                    os.remove(target_path)
+                                zip_file.extract(member, path=extract_folder)
                     else:
                         pass
                 except Exception as e:
