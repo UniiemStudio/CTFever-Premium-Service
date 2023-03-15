@@ -195,8 +195,9 @@ class Pycdecompile(Plugin):
 
     def load(self):
         self.fetch_data_package(
-            'https://file.i0x0i.ltd/api/v3/file/source/812/pycdc.zip?'
-            'sign=lbXh0k4eLCpqZn13_xwkIH4zAlreD59jmZpjlpIdujA%3D%3A0'
+            'https://resource.uniiem.com/index.php?user/publicLink&fid=076bstR_k43lhccT-Iv3z5qq6eIuM9dmBYkrH4qp6Lp-'
+            'PxxeRoK--vl_iePuie7TNelyZth6q_Ev1dXYuxcIifWJI5RuT9CtINNySWNbCtHxetN8ptQpgsNsoBTUPRf0AKnXx8ys9IyEUrAKISG'
+            '77MIlvv_jORxRCmHs8Lyj0ExhA_wH36_v0zdrpVFmGUzorPhRaQ&file_name=/pycdc.zip'
         )
 
     def unload(self):

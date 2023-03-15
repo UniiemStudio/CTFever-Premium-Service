@@ -5,7 +5,7 @@ import shutil
 import subprocess
 from typing import List
 
-import binwalk
+import importlib
 from fastapi import HTTPException, UploadFile
 from starlette.background import BackgroundTasks
 from starlette.responses import FileResponse
@@ -22,33 +22,39 @@ def random_string(size):
 class Binwalker(Plugin):
 
     def load(self):
-        self.fetch_data_package(
-            'https://file.i0x0i.ltd/api/v3/file/source/810/binwalk-2.3.2.zip'
-            '?sign=iKwXgbeUxOL0EVzei5b4TwbIi7X_revgtNM1Up4g3cg%3D%3A0'
-        )
-        # setup_path = os.path.join(self.data_dir(), 'binwalk-2.3.2', 'setup.py')
-        setup_path = os.path.join(self.data_dir(), 'binwalk-2.3.2')
-        if not os.path.exists(setup_path):
-            raise FileNotFoundError('setup.py not found')
-
-        async def do_install():
-            process = await asyncio.create_subprocess_exec(
-                # 'python', setup_path, 'install',
-                'pip', 'install', setup_path,
-                stdout=subprocess.PIPE,
-                stderr=subprocess.STDOUT
+        try:
+            module_binwalk = importlib.import_module('binwalk')
+            globals()['binwalk'] = module_binwalk
+        except ModuleNotFoundError:
+            self.fetch_data_package(
+                'https://resource.uniiem.com/index.php'
+                '?user/publicLink&fid=f6e5MJFzHcmAlfDM9s4sT7fCeE4tDJTu5G-MEMrd7mLaqBvB_n-CKYxkp2t09uh9y4df0DgFkC_'
+                'ITx00AgyUZ0rkt6F6HGMTpyUHOmPKctYDZXQdX0ZP-H-P64HQI_y3I0Pq2NHbuPDmU0vP3tNDrMjR8CXwoEW6nOp1iN4f-DG'
+                '_g58ST5FIxWjTnXFL_nxcqBzjt78kEFk&file_name=/binwalk-2.3.2.zip'
             )
-            stdout, stderr = await process.communicate()
-            return process.returncode, stdout, stderr
+            # setup_path = os.path.join(self.data_dir(), 'binwalk-2.3.2', 'setup.py')
+            setup_path = os.path.join(self.data_dir(), 'binwalk-2.3.2')
+            if not os.path.exists(setup_path):
+                raise FileNotFoundError('setup.py not found')
 
-        code, std_out, std_err = asyncio.run(do_install())
-        output = std_out.decode(
-            encoding=('gbk' if os.name == 'nt' else 'utf-8'),
-            errors='replace'
-        )
-        if code != 0:
-            raise RuntimeError(f'Install binwalk failed: {output}')
-        self.logger.info(f'binwalk has been installed successfully')
+            async def do_install():
+                process = await asyncio.create_subprocess_exec(
+                    # 'python', setup_path, 'install',
+                    'pip', 'install', setup_path,
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.STDOUT
+                )
+                stdout, stderr = await process.communicate()
+                return process.returncode, stdout, stderr
+
+            code, std_out, std_err = asyncio.run(do_install())
+            output = std_out.decode(
+                encoding=('gbk' if os.name == 'nt' else 'utf-8'),
+                errors='replace'
+            )
+            if code != 0:
+                raise RuntimeError(f'Install binwalk failed: {output}')
+            self.logger.info(f'binwalk has been installed successfully')
 
     def unload(self):
         pass
@@ -63,7 +69,9 @@ class Binwalker(Plugin):
         artifact_id = hashlib.md5(path.encode('utf-8')).hexdigest()
         artifacts = []
         signature_list: list = []
-        scan_result = await asyncio.to_thread(binwalk.scan, path, signature=True, extract=True, quiet=True)
+        module_binwalk = importlib.import_module('binwalk')
+        globals()['binwalk'] = module_binwalk
+        scan_result = await asyncio.to_thread(module_binwalk.scan, path, signature=True, extract=True, quiet=True)
         for module in scan_result:
             for result in module.results:
                 result_for_resp = result
